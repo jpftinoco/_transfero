@@ -11,7 +11,7 @@ class UsuarioAdmin(admin.ModelAdmin):
 @admin.register(models.film)
 class filmAdmin(admin.ModelAdmin):
     list_display = ('id','nome','ano','estudio','genero',)
-
+    
 #aqui fica o registro do genero
 @admin.register(models.genero)
 class generoAdmin(admin.ModelAdmin):
