@@ -1,0 +1,33 @@
+<div class="container_f">
+    <table class="table_f">
+        <caption class="table-caption_f">
+            listagem dos filmes
+        </caption>
+
+        <thead>
+            <tr class="table-row table-row-header_f">
+                <th class="table-header">Id</th>
+                <th class="table-header">Nome</th>
+                <th class="table-header">ano</th>
+                <th class="table-header">estudio</th>
+                <th class="table-header">genero</th>
+                <th class="table-header">data de lancamento</th>
+            </tr>
+        </thead>
+
+
+
+        <tbody>
+            {%for film in filmes %}
+                <tr class="table-row_f">
+                    <td class="table-cel"> {{film.id}} </td>
+                    <td class="table-cel"> {{film.nome}} </td>
+                    <td class="table-cel"> {{film.ano}} </td>
+                    <td class="table-cel"> {{film.estudio}} </td>
+                    <td class="table-cel"> {{film.genero}} </td>
+                    <td class="table-cel"> {{film.data_lancamento}} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
