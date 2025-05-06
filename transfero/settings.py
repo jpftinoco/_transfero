@@ -22,6 +22,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sistema',
+    'usuarios',
+    'filmes',
 ]
 
 MIDDLEWARE = [
@@ -107,7 +109,7 @@ STATICFILES_DIRS = (
     BASE_DIR / 'base_static',
 )
 
-MEDIA_URL = 'media/' # e onde fica os aquivos que o usuario irar enviar
+MEDIA_URL = 'media/' # e onde fica os caminhos dos aquivos que aonde o usuario irar enviar 
 
 
 # Default primary key field type
