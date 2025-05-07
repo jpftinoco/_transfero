@@ -109,8 +109,11 @@ STATICFILES_DIRS = (
     BASE_DIR / 'base_static',
 )
 
-MEDIA_URL = 'media/' # e onde fica os caminhos dos aquivos que aonde o usuario irar enviar 
+MEDIA_URL = 'media/' # e o endereço url inicial onde os arquivos de midia serao salvos.
+MEDIA_ROOT = BASE_DIR / 'media' # um caminho onde os arquivos de midia serao salvos
 
+STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static'# e o endereço url inicial aonde estao os arquivos estaticos
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

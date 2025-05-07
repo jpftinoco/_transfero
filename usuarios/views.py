@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from usuarios.forms import Usuarioform
+from usuarios.forms import UsuarioForm
 
 
 def login(request):
@@ -11,13 +11,13 @@ def login(request):
 def criarusuario(request):
     
     if request.method == 'POST':
-        form = Usuarioform(request.POST, request.FILES)
+        form = UsuarioForm(request.POST, request.FILES)
         if form.is_valid():
             form.save
             return redirect('usuario/login')
         
     else:
-        form = Usuarioform()
+        form = UsuarioForm()
 
 
     return render(

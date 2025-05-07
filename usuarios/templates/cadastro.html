@@ -8,11 +8,10 @@
 <body>
     <h1>cadastro de usuario</h1>
     
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}  {% comment %} defesa para roubo de dados  {% endcomment %}
         
         {{form.as_p}}
-        
         <button type="submit">cadastrar</button>
     </form>
 

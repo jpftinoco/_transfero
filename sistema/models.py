@@ -31,6 +31,7 @@ class film(models.Model):
     estudio = models.CharField(max_length = 20)
     genero = models.ForeignKey(genero, on_delete = models.SET_NULL, null = True, blank = True)
     data_lançamento = models.DateField()
+    sinopse =  models.CharField(max_length = 500)
     def __str__(self):
         return self.nome
 
