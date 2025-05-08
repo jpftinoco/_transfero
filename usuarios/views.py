@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from usuarios.forms import UsuarioForm
-
+from sistema.models import Usuario
 
 def login(request):
     return render(
@@ -9,12 +9,13 @@ def login(request):
     )
 
 def criarusuario(request):
-    
+
     if request.method == 'POST':
         form = UsuarioForm(request.POST, request.FILES)
+        print(f"dados: {form.data}")
         if form.is_valid():
-            form.save
-            return redirect('usuario/login')
+            form.save()
+            return redirect('listarusuarios')
         
     else:
         form = UsuarioForm()
@@ -25,3 +26,17 @@ def criarusuario(request):
     'cadastro.html',
     {'form': form}
 )
+
+
+def listardeusuarios(request):
+    usuarios = Usuario.objects.all()
+
+    context = {
+        'usuarios': usuarios,
+    }
+   
+    return render(
+        request,
+        'listar.html',
+        context,
+    )

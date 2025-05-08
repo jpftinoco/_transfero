@@ -10,7 +10,7 @@ class UsuarioAdmin(admin.ModelAdmin):
 #aqui fica o registro do filme
 @admin.register(models.film)
 class filmAdmin(admin.ModelAdmin):
-    list_display = ('id','nome','ano','estudio','genero',)
+    list_display = ('id','nome','ano','estudio','genero', 'sinopse')
     
 #aqui fica o registro do genero
 @admin.register(models.genero)

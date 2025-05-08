@@ -1,9 +1,11 @@
 from django.utils import timezone
 from django.db import models
 
+#se mudar alguma coisa aqui DE MAKEMIGRATIONS
 # aqui vai ficar a lass modelo do usuario
 # nome,sobrenome,cpf,gmail,endereço,foto
 #data_cadastro,ativo
+
 class Usuario(models.Model):
     nome = models.CharField(max_length = 50)
     sobrenome = models.CharField(max_length = 50)
@@ -27,11 +29,12 @@ class genero(models.Model):
 
 class film(models.Model):
     nome = models.CharField(max_length = 100)
-    ano = models.DateField()
+    ano = models.IntegerField()
     estudio = models.CharField(max_length = 20)
     genero = models.ForeignKey(genero, on_delete = models.SET_NULL, null = True, blank = True)
     data_lançamento = models.DateField()
-    sinopse =  models.CharField(max_length = 500)
+    sinopse = models.CharField(max_length = 500)
+    
     def __str__(self):
         return self.nome
 
