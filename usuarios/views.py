@@ -12,7 +12,6 @@ def criarusuario(request):
 
     if request.method == 'POST':
         form = UsuarioForm(request.POST, request.FILES)
-        print(f"dados: {form.data}")
         if form.is_valid():
             form.save()
             return redirect('listarusuarios')
