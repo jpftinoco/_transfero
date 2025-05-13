@@ -1,10 +1,48 @@
-<h1>aqui vai ficar a parte do header</h1>
+<header class="navbar"> 
+    <div class="logo">streambox</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">Filmes</a></li>
+            <li><a href="#">Séries</a></li>
+            <li><a href="#">Minha lista</a></li>
+        </ul>
+    </nav>
+</header>
+
 
 <style>
-    h1 {
-        background-color: brown;
-        text-align: center;
-        height: 80px;
-        padding: 20px 0;
-    }
+   .nav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1d;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 1rem 2px;
+   }
+
+   .logo{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #b06610;
+   }
+
+   .nav-links{
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+   }
+   .nav-links li a{
+    font-weight: 600;
+    color: #ccc;
+    text-decoration: none;
+
+   }
+   .nav-links li a:hover{
+        color: #fff;
+        
+   }
 </style>
