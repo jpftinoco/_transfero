@@ -25,16 +25,3 @@ def criarusuario(request):
     {'form': form}
 )
 
-def listardeusuarios(request):
-
-    usuarios = UsuarioForm.objects.all()
-
-    context = {
-        'usuarios': usuarios,
-    }
-   
-    return render(
-        request,
-        'listar.html',
-        context,
-    )

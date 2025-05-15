@@ -5,6 +5,14 @@
     box-sizing: border-box;
    }
    
+   body{
+    font-family: sans-serif;
+    background-image: url("../global/assets/images/Group1.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    color: #fff;
+   }
    /* estilo do header */
    .navbar {
     display: flex;
@@ -38,6 +46,20 @@
         color: #b00610;
         text-decoration: underline;
         
+   }
+
+   .nav-actions{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+   }
+   
+   .search-input{
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    background-color: #2c2c2c31;
+    color: white;
    }
 
    /* estilo do footer */
@@ -134,3 +156,4 @@
     }
 
 
+/* estilo do login */

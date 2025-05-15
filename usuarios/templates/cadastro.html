@@ -1,19 +1,104 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cadastro</title>
+    <head>{% include "partials/_head.html" %}</head>
+    <header>{% include "partials/_header.html" %}</header>
 </head>
 <body>
-    <h1>cadastro de usuario</h1>
-    
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}  {% comment %} defesa para roubo de dados  {% endcomment %}
-        
-        {{form.as_p}}
-        <button type="submit">cadastrar</button>
-    </form>
+    <main class="cadastro-body">
+        <div class="cadastro-container">
+            <a>
+                <h1>cadastro de usuario</h1>
+                <img 
+                src="{% static '/global/assets/images/support-banner-image.jpg'%}" alt="img generica">
+            <a>
+            <form action="post" class="cadastro-form">
+             {% csrf_token %}  {% comment %} <!-- defesa para roubo de dados  {% endcomment %} -->
+                <input type="text" placeholder="Nome" required>
+                <input type="text" placeholder="Sobrenome" required>
+                <input type="text" placeholder="Email" required>
+                <input type="text" placeholder="telefone" required>
+                <input type="text" placeholder="Cpf" required>
+                <input type="text" placeholder="Senha" required>
+                <button class="btn-cadastro" type="submit">
+                    cadastrar
+                </button>                    
+            </form>
+   
+        </div>
 
+
+        <style>
+        .cadastro-body{
+            background-color: #0e0e10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 800px;
+            place-content: center;
+            grid-template-columns:1fr 1fr;
+        }
+        .cadastro-container{
+            background-color: #1a1a1d;
+            padding: 48px;
+            box-shadow: 0 0 200px rgba(176, 6, 16, 1);
+            text-align: center;
+            max-width: 500px;
+           
+        }
+        .cadastro-container h1 {
+            margin-bottom: 8px;
+            font-size: 32px;
+        }
+        .cadastro-container a{
+        place-content: center;
+        }
+        .cadastro-form input {
+            display: block;
+            width: 100%;
+            padding: 2%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: none;
+            background-color: #2c2c31;
+        }
+        .btn-cadastro{
+            background-color: #e50914;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .btn-cadastro:hover {
+            background-color: #b00610;
+        }
+        </style>    
+    </main>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+<!-- <div>
+    <h1>cadastro de usuario</h1>
+
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}  {% comment %} defesa para roubo de dados  {% endcomment %}
+    
+    {{form.as_p}}
+    <button type="submit">cadastrar</button>
+    </form>
+</div> -->
