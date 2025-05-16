@@ -11,24 +11,60 @@
 <body>
     <main class="cadastro-body">
         <div class="cadastro-container">
-            <a>
-                <h1>cadastro de usuario</h1>
-                <img 
-                src="{% static '/global/assets/images/support-banner-image.jpg'%}" alt="img generica">
-            <a>
-            <form action="post" class="cadastro-form">
-             {% csrf_token %}  {% comment %} <!-- defesa para roubo de dados  {% endcomment %} -->
-                <input type="text" placeholder="Nome" required>
-                <input type="text" placeholder="Sobrenome" required>
-                <input type="text" placeholder="Email" required>
-                <input type="text" placeholder="telefone" required>
-                <input type="text" placeholder="Cpf" required>
-                <input type="text" placeholder="Senha" required>
-                <button class="btn-cadastro" type="submit">
-                    cadastrar
-                </button>                    
-            </form>
-   
+            <div class="container-info">
+
+                <div class="container-title">
+                    <h1>Bem-vindo!</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione quia harum quos omnis, incidunt id ad deleniti soluta, libero laboriosam beatae, quas labore commodi minima magnam unde dicta doloribus nostrum!</p>
+                </div>
+                <div class="container-img">
+                    <img
+                    src="{% static '/global/assets/images/support-banner-image.jpg'%}" alt="img generica">
+                </div>
+
+            </div>
+            <div class="container-form">
+                <form action="post">
+                    {% csrf_token %}  {% comment %}  defesa para roubo de dados  {% endcomment %}
+                            <div class="container-form-row">
+                                <div class="container-form-input">
+                                    <label for="Nome">Nome</label>
+                                    <input type="text" placeholder="Nome" required>
+                                </div>
+                                <div class="container-form-input">
+                                    <label for="Sobrenome">Sobrenome</label>
+                                    <input type="text" placeholder="Sobrenome" required>
+                                </div>
+                            </div>
+                            <div class="container-form-row">
+                                <div class="container-form-input">
+                                    <label for="Email">Email</label>
+                                    <input type="text" placeholder="Email" required>
+                                </div>
+                                <div class="container-form-input">
+                                    <label for="telefone">telefone</label>
+                                    <input type="text" placeholder="telefone" required>
+                                </div>
+                            </div>
+                            <div class="container-form-row">
+                                <div class="container-form-input">
+                                    <label for="Cpf">Cpf</label>
+                                    <input type="text" placeholder="Cpf" required>
+                                </div>
+                                <div class="container-form-input">
+                                    <label for="senha">Senha</label>
+                                    <input type="text" placeholder="Senha" required>
+                                </div>
+                            </div>
+                            <div class="container-form-footer">
+                                <input type="checkbox" name="adof" id="" required>
+                                    concorde com os termos de uso
+                                <button class="btn-cadastro" type="submit">
+                                    cadastrar
+                                </button>
+                            </div>    
+                </form>      
+            </div>                
         </div>
 
 
@@ -39,32 +75,73 @@
             align-items: center;
             justify-content: center;
             height: 800px;
-            place-content: center;
-            grid-template-columns:1fr 1fr;
         }
+
         .cadastro-container{
             background-color: #1a1a1d;
             padding: 48px;
             box-shadow: 0 0 200px rgba(176, 6, 16, 1);
-            text-align: center;
-            max-width: 500px;
-           
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1200px;
         }
-        .cadastro-container h1 {
-            margin-bottom: 8px;
-            font-size: 32px;
+
+        .container-title {
+            margin-bottom: 24px;
         }
-        .cadastro-container a{
-        place-content: center;
+
+        .container-title p{
+            color: #aaa;
         }
-        .cadastro-form input {
+        
+        .container-img img {
+            max-width: 100%; /* não pode ultrapassar o tamanho do elemento pai (div container-info) */
+            width: 400px;
+        }
+
+        .container-form{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container-form-row{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .container-form input {
             display: block;
             width: 100%;
-            padding: 2%;
+            padding: 14px;
             border-radius: 10px;
             margin-bottom: 10px;
             border: none;
             background-color: #2c2c31;
+        }
+
+        .container-form-input{
+            /* preencher */
+        }
+
+        .container-form-footer{
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+        }
+        .container-form-footer input {
+            width: 16px;
+            height: 16px;
+            justify-content: center;
+            align-items: center     ;
+            margin-left: 20px;
+            margin-right: 20px;
+            background-color: #2c2c31;
+        }
+        .container-form-footer button{
+            margin-left: 20px;
+            display: flex; 
+            justify-content: space-between;
         }
         .btn-cadastro{
             background-color: #e50914;
